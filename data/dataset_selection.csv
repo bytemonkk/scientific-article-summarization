@@ -1,0 +1,22 @@
+﻿PMCID,PMID,Title,ManualDecision,Selected,JSONPath
+PMC10025752,36462630,"Machine Learning for Lung Cancer Diagnosis, Treatment, and Prognosis",KEEP,True,data\articles\PMC10025752.json
+PMC10657428,37980411,PET/CT based cross-modal deep learning signature to predict occult nodal metastasis in lung cancer,KEEP,True,data\articles\PMC10657428.json
+PMC10997848,38581113,"Artificial intelligence in lung cancer screening: Detection, classification, prediction, and prognosis",KEEP,True,data\articles\PMC10997848.json
+PMC11674357,39731064,Survival prediction of glioblastoma patients using machine learning and deep learning: a systematic review,EXCLUDE,False,data\articles\PMC11674357.json
+PMC12406473,40898302,Deep learning-based histomorphological subtyping and risk stratification of small cell lung cancer from hematoxylin and eosin-stained whole slide images,KEEP,True,data\articles\PMC12406473.json
+PMC13105547,41428992,The intersection of artificial intelligence and lung nodule research: current applications and future prospects,KEEP,True,data\articles\PMC13105547.json
+PMC6338921,30621101,An Appraisal of Lung Nodules Automatic Classification Algorithms for CT Images,KEEP,True,data\articles\PMC6338921.json
+PMC6879441,31190176,What can artificial intelligence teach us about the molecular mechanisms underlying disease?,REVIEW,False,data\articles\PMC6879441.json
+PMC6895901,31661863,Artificial Intelligence in Lung Cancer Pathology Image Analysis,KEEP,True,data\articles\PMC6895901.json
+PMC7613986,36568860,A Hybrid Framework for Lung Cancer Classification,KEEP,True,data\articles\PMC7613986.json
+PMC7616143,38877116,Ultrasensitive plasma-based monitoring of tumor burden using machine learning-guided signal enrichment,REVIEW,False,data\articles\PMC7616143.json
+PMC7616186,33059822,A Role for FDG PET Radiomics in Personalized Medicine?,KEEP,True,data\articles\PMC7616186.json
+PMC7783473,33408594,Artificial Intelligence and its future potential in lung cancer screening,KEEP,True,data\articles\PMC7783473.json
+PMC7981277,32958579,Deep learning to estimate RECIST in patients with NSCLC treated with PD-1 blockade,KEEP,True,data\articles\PMC7981277.json
+PMC8321170,34460557,Fully 3D Active Surface with Machine Learning for PET Image Segmentation,KEEP,True,data\articles\PMC8321170.json
+PMC8484174,33693966,Structural and functional radiomics for lung cancer,KEEP,True,data\articles\PMC8484174.json
+PMC8709297,34959678,A Deep-Learning Proteomic-Scale Approach for Drug Design,REVIEW,False,data\articles\PMC8709297.json
+PMC8982538,35694416,The application of artificial intelligence and radiomics in lung cancer,KEEP,True,data\articles\PMC8982538.json
+PMC9445420,36081949,Lung adenocarcinoma-related target gene prediction and drug repositioning,KEEP,True,data\articles\PMC9445420.json
+PMC9643917,36350524,Artificial intelligence in lung cancer: current applications and perspectives,KEEP,True,data\articles\PMC9643917.json
+PMC9646838,36351997,Deep learning-based framework for slide-based histopathological image analysis,REVIEW,False,data\articles\PMC9646838.json

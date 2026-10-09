@@ -1,0 +1,130 @@
+[
+  {
+    "pmcid": "PMC10025752",
+    "pmid": "36462630",
+    "title": "Machine Learning for Lung Cancer Diagnosis, Treatment, and Prognosis",
+    "journal": "Genomics, Proteomics & Bioinformatics",
+    "publication_year": 2022,
+    "json_path": "data\\articles\\PMC10025752.json"
+  },
+  {
+    "pmcid": "PMC10657428",
+    "pmid": "37980411",
+    "title": "PET/CT based cross-modal deep learning signature to predict occult nodal metastasis in lung cancer",
+    "journal": "Nature Communications",
+    "publication_year": 2023,
+    "json_path": "data\\articles\\PMC10657428.json"
+  },
+  {
+    "pmcid": "PMC10997848",
+    "pmid": "38581113",
+    "title": "Artificial intelligence in lung cancer screening: Detection, classification, prediction, and prognosis",
+    "journal": "Cancer Medicine",
+    "publication_year": 2024,
+    "json_path": "data\\articles\\PMC10997848.json"
+  },
+  {
+    "pmcid": "PMC12406473",
+    "pmid": "40898302",
+    "title": "Deep learning-based histomorphological subtyping and risk stratification of small cell lung cancer from hematoxylin and eosin-stained whole slide images",
+    "journal": "Genome Medicine",
+    "publication_year": 2025,
+    "json_path": "data\\articles\\PMC12406473.json"
+  },
+  {
+    "pmcid": "PMC13105547",
+    "pmid": "41428992",
+    "title": "The intersection of artificial intelligence and lung nodule research: current applications and future prospects",
+    "journal": "International Journal of Surgery (London, England)",
+    "publication_year": 2026,
+    "json_path": "data\\articles\\PMC13105547.json"
+  },
+  {
+    "pmcid": "PMC6338921",
+    "pmid": "30621101",
+    "title": "An Appraisal of Lung Nodules Automatic Classification Algorithms for CT Images",
+    "journal": "Sensors (Basel, Switzerland)",
+    "publication_year": 2019,
+    "json_path": "data\\articles\\PMC6338921.json"
+  },
+  {
+    "pmcid": "PMC6895901",
+    "pmid": "31661863",
+    "title": "Artificial Intelligence in Lung Cancer Pathology Image Analysis",
+    "journal": "Cancers",
+    "publication_year": 2019,
+    "json_path": "data\\articles\\PMC6895901.json"
+  },
+  {
+    "pmcid": "PMC7613986",
+    "pmid": "36568860",
+    "title": "A Hybrid Framework for Lung Cancer Classification",
+    "journal": "Electronics",
+    "publication_year": 2022,
+    "json_path": "data\\articles\\PMC7613986.json"
+  },
+  {
+    "pmcid": "PMC7616186",
+    "pmid": "33059822",
+    "title": "A Role for FDG PET Radiomics in Personalized Medicine?",
+    "journal": "Seminars in nuclear medicine",
+    "publication_year": 2020,
+    "json_path": "data\\articles\\PMC7616186.json"
+  },
+  {
+    "pmcid": "PMC7783473",
+    "pmid": "33408594",
+    "title": "Artificial Intelligence and its future potential in lung cancer screening",
+    "journal": "EXCLI Journal",
+    "publication_year": 2020,
+    "json_path": "data\\articles\\PMC7783473.json"
+  },
+  {
+    "pmcid": "PMC7981277",
+    "pmid": "32958579",
+    "title": "Deep learning to estimate RECIST in patients with NSCLC treated with PD-1 blockade",
+    "journal": "Cancer discovery",
+    "publication_year": 2020,
+    "json_path": "data\\articles\\PMC7981277.json"
+  },
+  {
+    "pmcid": "PMC8321170",
+    "pmid": "34460557",
+    "title": "Fully 3D Active Surface with Machine Learning for PET Image Segmentation",
+    "journal": "Journal of Imaging",
+    "publication_year": 2020,
+    "json_path": "data\\articles\\PMC8321170.json"
+  },
+  {
+    "pmcid": "PMC8484174",
+    "pmid": "33693966",
+    "title": "Structural and functional radiomics for lung cancer",
+    "journal": "European Journal of Nuclear Medicine and Molecular Imaging",
+    "publication_year": 2021,
+    "json_path": "data\\articles\\PMC8484174.json"
+  },
+  {
+    "pmcid": "PMC8982538",
+    "pmid": "35694416",
+    "title": "The application of artificial intelligence and radiomics in lung cancer",
+    "journal": "Precision Clinical Medicine",
+    "publication_year": 2020,
+    "json_path": "data\\articles\\PMC8982538.json"
+  },
+  {
+    "pmcid": "PMC9445420",
+    "pmid": "36081949",
+    "title": "Lung adenocarcinoma-related target gene prediction and drug repositioning",
+    "journal": "Frontiers in Pharmacology",
+    "publication_year": 2022,
+    "json_path": "data\\articles\\PMC9445420.json"
+  },
+  {
+    "pmcid": "PMC9643917",
+    "pmid": "36350524",
+    "title": "Artificial intelligence in lung cancer: current applications and perspectives",
+    "journal": "Japanese Journal of Radiology",
+    "publication_year": 2022,
+    "json_path": "data\\articles\\PMC9643917.json"
+  }
+]
