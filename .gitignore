@@ -1,10 +1,110 @@
-# Python-generated files
+# ==========================================
+# Python
+# ==========================================
 __pycache__/
-*.py[oc]
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
 build/
 dist/
 wheels/
-*.egg-info
+pip-wheel-metadata/
 
+# ==========================================
 # Virtual environments
-.venv
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# Environment variables and secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+!.env.template
+
+# API keys and credentials
+secrets.toml
+credentials.json
+token.json
+*.pem
+*.key
+
+# ==========================================
+# Testing and coverage
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+
+# ==========================================
+# Type checking and linting
+# ==========================================
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# ==========================================
+# Jupyter
+# ==========================================
+.ipynb_checkpoints/
+
+# ==========================================
+# IDEs and editors
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==========================================
+# OS files
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Logs and temporary files
+# ==========================================
+*.log
+*.tmp
+*.temp
+
+# ==========================================
+# Model weights and large artifacts
+# ==========================================
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# ==========================================
+# Local model and experiment outputs
+# ==========================================
+outputs/
+checkpoints/
+runs/
+mlruns/
+wandb/
+
+# ==========================================
+# Langfuse / local configuration
+# ==========================================
+.langfuse/
+
+# ==========================================
+# Temporary research inspection files
+# ==========================================
+inspect_*.py
+test_pmc_fulltext.py
