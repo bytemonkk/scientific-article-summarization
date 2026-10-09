@@ -1,0 +1,11 @@
+[project]
+name = "scientific-article-summarization"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "biopython>=1.88",
+    "lxml>=6.1.3",
+    "requests>=2.34.2",
+]
