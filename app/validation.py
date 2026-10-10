@@ -19,9 +19,9 @@ def _extract_text(element) -> str:
         return ""
 
     return " ".join(
-        text.strip()
-        for text in element.xpath(".//text()[normalize-space()]")
-        if text.strip()
+        part.strip()
+        for part in element.itertext()
+        if part and part.strip()
     )
 
 
@@ -121,16 +121,15 @@ def validate_pmc_xml(xml_data: bytes) -> dict:
         # Collect text belonging to this section, excluding
         # nested subsections so their content is not duplicated.
         text_parts = section.xpath(
-            "./node()[not(self::sec)]"
-            "//text()[normalize-space()]"
+            "./node()[not(self::sec)]//text()[normalize-space()]"
         )
 
         section_text = " ".join(
             part.strip()
             for part in text_parts
-            if part.strip()
+            if part and part.strip()
         )
-
+        
         if len(section_text) < 100:
             continue
 
