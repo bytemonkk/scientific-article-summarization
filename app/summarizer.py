@@ -1,19 +1,31 @@
 """Section-aware summarization for scientific articles."""
-import json
+
+import os
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Callable, Any
+from typing import Any, Callable
+from app.llm_client import generate_response, get_model_name
 
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).resolve().parent.parent / ".env")
-
-from langfuse import get_client
-
-langfuse = get_client()
+# Load project environment variables before initializing Langfuse or the LLM.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(PROJECT_ROOT / ".env")
 
 from app.llm_client import MODEL, generate_response
 from app.preprocessing import load_article, prepare_section_chunks
+
+# Langfuse is optional for batch inference.
+LANGFUSE_ENABLED = os.getenv(
+    "LANGFUSE_ENABLED", "true"
+).strip().lower() in {"1", "true", "yes", "on"}
+
+langfuse = None
+
+if LANGFUSE_ENABLED:
+    from langfuse import get_client
+
+    langfuse = get_client()
 
 
 CHUNK_SYSTEM_PROMPT = """
@@ -41,23 +53,35 @@ def _summarize_article_data_impl(
     max_words: int = 1200,
     generate_fn: Callable[..., str] = generate_response,
 ) -> dict[str, Any]:
-    """Summarize an article using chunk summaries and final synthesis."""
+    """Generate chunk summaries and synthesize the final article summary."""
+
     chunks = prepare_section_chunks(article, max_words=max_words)
-    print(f"Prepared {len(chunks)} chunks for summarization.", flush=True)
+
+    print(f"Prepared {len(chunks)} chunks for summarization.")
 
     if not chunks:
-        raise ValueError("No substantive text chunks to summarize")
+        raise ValueError("No substantive sections found")
 
     chunk_summaries = []
 
     for index, chunk in enumerate(chunks, start=1):
+        print(
+            f"Summarizing chunk {index}/{len(chunks)}: "
+            f"{chunk['section_heading']}"
+        )
+
         prompt = f"""
 Article title: {article["title"]}
 Section: {chunk["section_heading"]}
 Chunk: {chunk["chunk_index"] + 1}
 
 Summarize this portion of the article in approximately 100–180 words.
-Preserve specific findings and numerical details when present.
+Preserve reported numerical results, dataset sizes, evaluation metrics,
+and study-specific findings when relevant.
+Distinguish findings from individual studies from background statements
+and proposed future applications.
+Do not invent numbers, combine results from different studies,
+or imply causation beyond what the source supports.
 If the passage describes background rather than results, retain that distinction.
 
 SOURCE TEXT:
@@ -69,12 +93,6 @@ SOURCE TEXT:
             system_prompt=CHUNK_SYSTEM_PROMPT,
             max_tokens=450,
         )
-        
-        print(
-            f"Summarizing chunk {index}/{len(chunks)}: "
-            f"{chunk['section_heading']}",
-            flush=True,
-        )
 
         chunk_summaries.append(
             {
@@ -85,7 +103,10 @@ SOURCE TEXT:
         )
 
     summaries_text = "\n\n".join(
-        f"Section: {item['section_heading']}\n{item['summary']}"
+        (
+            f"Section: {item['section_heading']}\n"
+            f"Summary: {item['summary']}"
+        )
         for item in chunk_summaries
     )
 
@@ -112,7 +133,9 @@ If a heading is not supported by the supplied material, say so briefly.
 Do not invent numerical results, methods, limitations, or citations.
 Avoid repeating the abstract verbatim.
 """
-    print("Generating the final article summary...", flush=True)
+
+    print("Generating the final article summary...")
+
     final_summary = generate_fn(
         final_prompt,
         system_prompt=FINAL_SYSTEM_PROMPT,
@@ -123,7 +146,7 @@ Avoid repeating the abstract verbatim.
         "pmcid": article["pmcid"],
         "pmid": article.get("pmid"),
         "title": article["title"],
-        "model": MODEL,
+        "model": get_model_name(),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "chunk_count": len(chunks),
         "chunk_summaries": chunk_summaries,
@@ -136,7 +159,15 @@ def summarize_article_data(
     max_words: int = 1200,
     generate_fn: Callable[..., str] = generate_response,
 ) -> dict[str, Any]:
-    """Summarize an article and trace the complete pipeline."""
+    """Summarize an article, optionally tracing the pipeline with Langfuse."""
+
+    # No Langfuse connection or tracing calls during batch inference.
+    if langfuse is None:
+        return _summarize_article_data_impl(
+            article,
+            max_words=max_words,
+            generate_fn=generate_fn,
+        )
 
     with langfuse.start_as_current_observation(
         as_type="span",
@@ -171,18 +202,25 @@ def summarize_article_data(
 
         return result
 
+
 def summarize_article_file(
     json_path: str | Path,
     output_path: str | Path,
 ) -> dict[str, Any]:
-    """Load, summarize, and save one article."""
+    """Load an article, summarize it, and save the result as JSON."""
+
     article = load_article(json_path)
     result = summarize_article_data(article)
 
     destination = Path(output_path)
     destination.parent.mkdir(parents=True, exist_ok=True)
+
     destination.write_text(
-        json.dumps(result, indent=2, ensure_ascii=False),
+        __import__("json").dumps(
+            result,
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
