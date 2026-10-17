@@ -2,6 +2,11 @@
 
 A local-first scientific literature summarization application that retrieves research articles from PubMed and PubMed Central (PMC), processes article text using section-aware chunking, and generates summaries with locally hosted Ollama language models. The Streamlit interface supports a curated research library, live PubMed search, and PDF uploads.
 
+# ACKNOWLEDGMENT
+
+I would like to express my sincere gratitude to **D. NAGA JYOTHI, Assistant Professor, Chaitanya Bharathi Institute of Technology (CBIT)**, for her academic guidance and support. Her encouragement has been valuable throughout the development and experimentation undertaken for this project. I am grateful for the opportunity to carry out this work as part of my academic learning.
+
+
 > **Project Status:** Working prototype with an initial curated dataset and preliminary model-evaluation results. The results are exploratory, not a definitive model ranking.
 
 ## Table of Contents
