@@ -4,7 +4,7 @@ A local-first scientific literature summarization application that retrieves res
 
 # ACKNOWLEDGMENT
 
-I would like to express my sincere gratitude to **D. NAGA JYOTHI, Assistant Professor, Chaitanya Bharathi Institute of Technology (CBIT)**, for her academic guidance and support. Her encouragement has been valuable throughout the development and experimentation undertaken for this project. I am grateful for the opportunity to carry out this work as part of my academic learning.
+I would like to express my sincere gratitude to **Dr. D. NAGA JYOTHI, Assistant Professor, Chaitanya Bharathi Institute of Technology (CBIT)**, for her academic guidance and support. Her encouragement has been valuable throughout the development and experimentation undertaken for this project. I am grateful for the opportunity to carry out this work as part of my academic learning.
 
 
 > **Project Status:** Working prototype with an initial curated dataset and preliminary model-evaluation results. The results are exploratory, not a definitive model ranking.
